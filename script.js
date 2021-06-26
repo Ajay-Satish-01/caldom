@@ -35,6 +35,14 @@ inputdiv2.append(input2nd);
 col2nd.append(inputdiv2);
 row2nd.append(col2nd);
 container.append(row2nd);
+//answer
+let ansdiv = document.createElement('div');
+ansdiv.setAttribute('class', 'my-3 ');
+let ansp = document.createElement('p');
+ansp.setAttribute('class', 'fs-3 fw-bold');
+ansp.id = 'answer';
+ansdiv.append(ansp);
+container.append(ansdiv);
 
 // //end of input field
 // //row 1
@@ -120,25 +128,26 @@ no1.innerText = '1';
 // //button for operations
 let add = document.createElement('button');
 add.setAttribute('class', 'btn btn-info');
-// add.setAttribute('id', 'addbutton');
+
+add.id = 'addbutton';
 add.classList.add('w-25', 'fs-2');
 // add.onclick = addfunctions(2);
 add.innerText = '+';
 let sub = document.createElement('button');
 sub.setAttribute('class', 'btn btn-info');
-// sub.setAttribute('id', 'subbutton');
+sub.id = 'subbutton';
 sub.classList.add('w-25', 'fs-2');
 // sub.onclick = subfunctions;
 sub.innerText = '-';
 let mul = document.createElement('button');
 mul.setAttribute('class', 'btn btn-info');
-// mul.setAttribute('id', 'mulbutton');
+mul.id = 'mulbutton';
 mul.classList.add('w-25', 'fs-2');
 // mul.onclick = mulfunctions;
 mul.innerText = '*';
 let divison = document.createElement('button');
 divison.setAttribute('class', 'btn btn-info');
-// division.setAttribute('id', 'divisionbutton');
+divison.id = 'divisionbutton';
 // division.onclick = divfunctions;
 divison.classList.add('w-25', 'fs-2');
 divison.innerText = '/';
@@ -214,28 +223,47 @@ container.append(row4);
 document.body.append(container);
 
 //end of design part
-// let sum = 0;
-// let numbertyped = 0;
-// let addbutton = document.getElementById('addbutton');
-// let subbutton = document.getElementById('subbutton');
-// let mulbutton = document.getElementById('mulbutton');
-// let divbutton = document.getElementById('divisionbutton');
+let sum = 0;
+let numbertyped = 0;
+let addbutton = document.getElementById('addbutton');
+let subbutton = document.getElementById('subbutton');
+let mulbutton = document.getElementById('mulbutton');
+let divbutton = document.getElementById('divisionbutton');
 
-// const addfunctions = (n) => {
-//   let number1 = document.getElementById('input1');
-//   let number2 = document.getElementById('input2');
-//   sum = +number1.value + +number2.value;
-//   console.log(sum);
-// };
-// addbutton.addEventListener('click', addfunctions);
+const addfunctions = () => {
+  let number1 = document.getElementById('input1');
+  let number2 = document.getElementById('input2');
+  sum = parseInt(number1.value) + parseInt(number2.value);
+  console.log(sum);
+  let answer = document.getElementById('answer');
+  answer.innerText = `Ans is ${sum}`;
+};
+addbutton.addEventListener('click', addfunctions);
 
-// const subfunctions = (n) => {
-//   sum -= n;
-//   console.log(sub);
-// };
-// const mulfunctions = (n) => {
-//   sum *= n;
-// };
-// const divfunctions = (n) => {
-//   sum /= n;
-// };
+const subfunctions = () => {
+  let number1 = document.getElementById('input1');
+  let number2 = document.getElementById('input2');
+  sum = parseInt(number1.value) - parseInt(number2.value);
+  console.log(sum);
+  let answer = document.getElementById('answer');
+  answer.innerText = `Ans is ${sum}`;
+};
+subbutton.addEventListener('click', subfunctions);
+const mulfunctions = () => {
+  let number1 = document.getElementById('input1');
+  let number2 = document.getElementById('input2');
+  sum = parseInt(number1.value) * parseInt(number2.value);
+  console.log(sum);
+  let answer = document.getElementById('answer');
+  answer.innerText = `Ans is ${sum}`;
+};
+mulbutton.addEventListener('click', mulfunctions);
+const divfunctions = () => {
+  let number1 = document.getElementById('input1');
+  let number2 = document.getElementById('input2');
+  sum = parseInt(number1.value) / parseInt(number2.value);
+  console.log(sum);
+  let answer = document.getElementById('answer');
+  answer.innerText = `Ans is ${sum}`;
+};
+divbutton.addEventListener('click', divfunctions);
