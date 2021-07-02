@@ -76,6 +76,7 @@ let equals = document.createElement('div');
 let clearb = document.createElement('button');
 clearb.setAttribute('class', 'btn btn-info');
 clearb.classList.add('w-25', 'fs-2');
+clearb.id = 'clear';
 clearb.innerText = 'clr';
 let zeroesb = document.createElement('button');
 zeroesb.setAttribute('class', 'btn btn-info');
@@ -84,6 +85,7 @@ zeroesb.innerText = '0';
 let equalsb = document.createElement('button');
 equalsb.setAttribute('class', 'btn btn-info');
 equalsb.classList.add('w-25', 'fs-2');
+equalsb.id = 'equals';
 equalsb.innerText = '=';
 //
 let no9 = document.createElement('button');
@@ -229,41 +231,100 @@ let addbutton = document.getElementById('addbutton');
 let subbutton = document.getElementById('subbutton');
 let mulbutton = document.getElementById('mulbutton');
 let divbutton = document.getElementById('divisionbutton');
+let clearbutton = document.getElementById('clear');
+let equalsbutton = document.getElementById('equals');
 
 const addfunctions = () => {
   let number1 = document.getElementById('input1');
   let number2 = document.getElementById('input2');
-  sum = parseInt(number1.value) + parseInt(number2.value);
-  console.log(sum);
-  let answer = document.getElementById('answer');
-  answer.innerText = `Ans is ${sum}`;
+  let no1value = number1.value;
+  let no2value = number2.value;
+  if (
+    no1value.charCodeAt(0) >= 47 &&
+    no1value.charCodeAt(0) <= 57 &&
+    no2value.charCodeAt(0) >= 47 &&
+    no2value.charCodeAt(0) <= 57
+  ) {
+    sum = parseInt(no1value) + parseInt(no2value);
+    console.log(sum);
+    let answer = document.getElementById('answer');
+    answer.innerText = `Ans is ${sum}`;
+  } else {
+    alert('Enter only numbers');
+  }
 };
 addbutton.addEventListener('click', addfunctions);
 
 const subfunctions = () => {
   let number1 = document.getElementById('input1');
   let number2 = document.getElementById('input2');
-  sum = parseInt(number1.value) - parseInt(number2.value);
-  console.log(sum);
-  let answer = document.getElementById('answer');
-  answer.innerText = `Ans is ${sum}`;
+  let no1value = number1.value;
+  let no2value = number2.value;
+  if (
+    no1value.charCodeAt(0) >= 47 &&
+    no1value.charCodeAt(0) <= 57 &&
+    no2value.charCodeAt(0) >= 47 &&
+    no2value.charCodeAt(0) <= 57
+  ) {
+    sum = parseInt(no1value) - parseInt(no2value);
+    console.log(sum);
+    let answer = document.getElementById('answer');
+    answer.innerText = `Ans is ${sum}`;
+  } else {
+    alert('Enter only numbers');
+  }
 };
 subbutton.addEventListener('click', subfunctions);
 const mulfunctions = () => {
   let number1 = document.getElementById('input1');
   let number2 = document.getElementById('input2');
-  sum = parseInt(number1.value) * parseInt(number2.value);
-  console.log(sum);
-  let answer = document.getElementById('answer');
-  answer.innerText = `Ans is ${sum}`;
+  let no1value = number1.value;
+  let no2value = number2.value;
+  if (
+    no1value.charCodeAt(0) >= 47 &&
+    no1value.charCodeAt(0) <= 57 &&
+    no2value.charCodeAt(0) >= 47 &&
+    no2value.charCodeAt(0) <= 57
+  ) {
+    sum = parseInt(no1value) * parseInt(no2value);
+    console.log(sum);
+    let answer = document.getElementById('answer');
+    answer.innerText = `Ans is ${sum}`;
+  } else {
+    alert('Enter only numbers');
+  }
 };
 mulbutton.addEventListener('click', mulfunctions);
 const divfunctions = () => {
   let number1 = document.getElementById('input1');
   let number2 = document.getElementById('input2');
-  sum = parseInt(number1.value) / parseInt(number2.value);
-  console.log(sum);
-  let answer = document.getElementById('answer');
-  answer.innerText = `Ans is ${sum}`;
+  let no1value = number1.value;
+  let no2value = number2.value;
+  if (
+    no1value.charCodeAt(0) >= 47 &&
+    no1value.charCodeAt(0) <= 57 &&
+    no2value.charCodeAt(0) >= 47 &&
+    no2value.charCodeAt(0) <= 57
+  ) {
+    sum = parseInt(no1value) / parseInt(no2value);
+    console.log(sum);
+    let answer = document.getElementById('answer');
+    answer.innerText = `Ans is ${sum}`;
+  } else {
+    alert('Enter only numbers');
+  }
 };
 divbutton.addEventListener('click', divfunctions);
+
+const clearfunctions = () => {
+  let number1 = document.getElementById('input1');
+  let number2 = document.getElementById('input2');
+  let no1value = number1.value;
+  let no2value = number2.value;
+  no1value = 0;
+  no2value = 0;
+  number1.textContent = 0;
+  number2.textContent = 0;
+  console.log('cleared', no1value, no2value);
+};
+clearbutton.addEventListener('click', clearfunctions);
