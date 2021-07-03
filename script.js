@@ -315,16 +315,3 @@ const divfunctions = () => {
   }
 };
 divbutton.addEventListener('click', divfunctions);
-
-const clearfunctions = () => {
-  let number1 = document.getElementById('input1');
-  let number2 = document.getElementById('input2');
-  let no1value = number1.value;
-  let no2value = number2.value;
-  no1value = 0;
-  no2value = 0;
-  number1.textContent = 0;
-  number2.textContent = 0;
-  console.log('cleared', no1value, no2value);
-};
-clearbutton.addEventListener('click', clearfunctions);
